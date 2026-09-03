@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Corrugation Attribute Import</title>
+    <style>
+        body {
+            margin: 0;
+            color: #1f2933;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+        .npt-page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 20px 48px;
+        }
+        .npt-header {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 24px;
+            margin-bottom: 28px;
+        }
+        .npt-kicker {
+            margin: 0 0 8px;
+            color: #6b7280;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+        h1 {
+            margin: 0 0 12px;
+            color: #111827;
+            font-size: 34px;
+            line-height: 1.2;
+        }
+        h2 {
+            margin: 32px 0 12px;
+            color: #111827;
+            font-size: 22px;
+            line-height: 1.3;
+        }
+        p {
+            margin: 0 0 14px;
+        }
+        ul, ol {
+            margin: 0;
+            padding-left: 22px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .npt-lead {
+            max-width: 760px;
+            color: #374151;
+            font-size: 17px;
+        }
+        .npt-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .npt-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 18px;
+            background: #f9fafb;
+        }
+        .npt-box strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #111827;
+        }
+        .npt-note {
+            border-left: 4px solid #6b7280;
+            padding: 12px 16px;
+            background: #f9fafb;
+            color: #374151;
+        }
+        .npt-publisher {
+            border-top: 1px solid #e5e7eb;
+            margin-top: 34px;
+            padding-top: 22px;
+        }
+        a {
+            color: #0f766e;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 700px) {
+            .npt-page {
+                padding: 24px 16px 40px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .npt-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="npt-page">
+        <header class="npt-header">
+            <p class="npt-kicker">Odoo Products</p>
+            <h1>Corrugation Attribute Import</h1>
+            <p class="npt-lead">
+                Imports product attributes and attribute values from XLSX or CSV files using readable names instead of technical IDs.
+            </p>
+        </header>
+
+        <section>
+            <h2>Overview</h2>
+            <p>
+                Corrugation Attribute Import provides a wizard for importing product attributes and product attribute values.
+                It supports XLSX and CSV files, maps flexible column headers, and reports created, updated, and skipped records after import.
+            </p>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <div class="npt-grid">
+                <div class="npt-box">
+                    <strong>Attribute import</strong>
+                    <p>Creates or updates product attributes by name, create-variant mode, and sequence.</p>
+                </div>
+                <div class="npt-box">
+                    <strong>Attribute value import</strong>
+                    <p>Creates or updates product attribute values by attribute name and value name.</p>
+                </div>
+                <div class="npt-box">
+                    <strong>XLSX and CSV support</strong>
+                    <p>Reads XLSX workbooks or CSV/TXT files through a wizard upload field.</p>
+                </div>
+                <div class="npt-box">
+                    <strong>Import modes</strong>
+                    <p>Supports importing attributes and values together, attributes only, or values only.</p>
+                </div>
+                <div class="npt-box">
+                    <strong>Missing attribute option</strong>
+                    <p>Can create missing attributes while importing values when the option is enabled.</p>
+                </div>
+                <div class="npt-box">
+                    <strong>Import result log</strong>
+                    <p>Shows a summary of created, updated, and skipped rows after processing.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <ol>
+                <li>Open Attribute Tools and select Import Attributes/Values.</li>
+                <li>Choose the import mode: attributes and values, attributes only, or values only.</li>
+                <li>Upload an XLSX, CSV, or TXT file.</li>
+                <li>Enable or disable updating existing records and creating missing attributes as needed.</li>
+                <li>Run the import and review the result log in the wizard.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Supported Columns</h2>
+            <ul>
+                <li>Attributes: Name, Create Variant, Sequence.</li>
+                <li>Values: Attribute, Name, Sequence, and optional Weight when the related custom field exists.</li>
+                <li>Create Variant values supported by the wizard include always, no variant, and dynamic.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Benefits</h2>
+            <ul>
+                <li>Reduces manual product attribute and value entry.</li>
+                <li>Avoids requiring technical IDs in import files.</li>
+                <li>Supports controlled updates to existing product attribute data.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Screenshots</h2>
+            <p class="npt-note">
+                No product screenshots are included in this package. Add real screenshots under <strong>static/description/images/</strong> before publishing if screenshots are required for the listing.
+            </p>
+        </section>
+
+        <section>
+            <h2>Compatibility</h2>
+            <ul>
+                <li>Odoo 18.0</li>
+                <li>Requires the Odoo Product app.</li>
+                <li>XLSX import requires the Python package openpyxl on the server.</li>
+            </ul>
+        </section>
+
+        <section class="npt-publisher">
+            <h2>Support / Publisher</h2>
+            <p>
+                <strong>Next Page Technologies Pvt Ltd</strong><br>
+                <a href="https://nextpagetechnologies.com" target="_blank" rel="noopener">https://nextpagetechnologies.com</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Wizard View -->
+    <record id="view_attribute_import_wizard_form" model="ir.ui.view">
+        <field name="name">attribute.import.wizard.form</field>
+        <field name="model">attribute.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Attributes/Values" create="false" edit="false">
+                <group>
+                    <field name="mode"/>
+                    <field name="file" filename="file_name"/>
+                    <field name="file_name" invisible="1"/>
+                    <field name="update_existing"/>
+                    <!-- Odoo 17+: replace attrs with direct boolean expression -->
+                    <field name="create_missing_attribute" invisible="mode == 'attributes'"/>
+                </group>
+                <!-- Odoo 17+: replace attrs with direct boolean expression -->
+                <group string="Result" invisible="not log">
+                    <field name="log" nolabel="1" widget="text"/>
+                </group>
+                <footer>
+                    <button name="action_import" string="Import" type="object" class="btn-primary"/>
+                    <button string="Close" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Window Action (discoverable via Global Search) -->
+    <record id="action_attribute_import" model="ir.actions.act_window">
+        <field name="name">Import Attributes/Values</field>
+        <field name="res_model">attribute.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{"default_mode": "both"}</field>
+    </record>
+
+    <!-- Optional menu under Products / Configuration (best-effort, menu may differ by Odoo version) -->
+    <!-- Top-level app-style menu visible to Internal Users -->
+    <menuitem id="menu_attribute_import_root"
+              name="Attribute Tools"
+              sequence="80"
+              groups="base.group_user"/>
+
+    <menuitem id="menu_attribute_import"
+              name="Import Attributes/Values"
+              parent="menu_attribute_import_root"
+              action="action_attribute_import"
+              sequence="10"
+              groups="base.group_user"/>
+</odoo>
