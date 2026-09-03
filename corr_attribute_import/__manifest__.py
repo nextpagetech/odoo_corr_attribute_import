@@ -1,6 +1,6 @@
 {
     "name": "Corrugation Attribute Import",
-    "summary": "Import product attributes and values from XLSX/CSV without technical IDs",
+    "summary": "Import product attributes and values from XLSX/CSV using names",
     "description": """
 Imports product attributes and attribute values from XLSX or CSV files using names instead of technical IDs, with options to update existing records and create missing attributes.
     """,
@@ -14,6 +14,9 @@ Imports product attributes and attribute values from XLSX or CSV files using nam
     "data": [
         "security/ir.model.access.csv",
         "views/attribute_import_views.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
     ],
     "installable": True,
     "application": True,
